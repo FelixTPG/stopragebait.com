@@ -29,7 +29,7 @@ export default function StopRagebait() {
   });
 
   // t = translations for current language
-  const t = useMemo(() => translations[lang] || translations["en"], [lang]);
+  const t = useMemo(() => ({ ...translations[lang] }) || { ...translations["en"] }, [lang]);
 
   // ui copy status
   const [copied, setCopied] = useState(false);
@@ -43,7 +43,7 @@ export default function StopRagebait() {
     } catch {
       // ignore
     }
-  }, [lang, t.title, t.ogDesc]);
+  }, [lang, t.title]);
 
   // link copy - try async clipboard first, fallback to textarea
   const copy = useCallback(async () => {
@@ -75,7 +75,7 @@ export default function StopRagebait() {
   }, []);
 
   return (
-      <main className="min-h-screen w-full bg-gradient-to-b from-orange-100 to-amber-50 text-orange-800 dark:text-white dark:from-slate-900 dark:to-gray-900 transition-colors">
+      <main className="min-h-screen w-full bg-gradient-to-b from-orange-100 to-amber-50 text-orange-900 dark:text-white dark:from-slate-950 dark:to-slate-900  transition-colors">
         <header className="max-w-4xl mx-auto px-6 pt-12 pb-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="text-3xl" aria-hidden>
@@ -90,8 +90,8 @@ export default function StopRagebait() {
                 id="sr-lang-select"
                 value={lang}
                 onChange={(e) => setLang(e.target.value)}
-                className="px-3 py-1 rounded-2xl border focus:outline-none focus:ring-1 focus:ring-orange-200 dark:bg-slate-700 dark:text-white"
-                aria-label={lang === "de" ? "Sprache wählen" : "Choose language"}
+                className="px-3 py-1 rounded-2xl border border-slate-400 focus:outline-none dark:bg-slate-700 dark:text-white cursor-pointer"
+                aria-label="Choose language"
             >
               <option value="de">🇩🇪</option>
               <option value="en">🇬🇧</option>
@@ -101,14 +101,14 @@ export default function StopRagebait() {
           </div>
         </header>
 
-        <section className="max-w-4xl mx-auto px-6 py-8 text-center">
+        <section className="max-w-4xl mx-auto px-6 py-8">
           <h2 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">{t.tagline}</h2>
-          <p className="mt-4 text-lg md:text-xl text-orange-700 dark:text-orange-200">{t.sub}</p>
+          <p className="mt-4 text-lg md:text-xl text-orange-900 dark:text-white">{t.sub}</p>
 
-          <div className="mt-6 flex justify-center gap-3">
+          <div className="mt-6 flex justify-left gap-3">
             <button
                 onClick={copy}
-                className="px-5 py-2 rounded-2xl bg-orange-900 text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                className="px-5 py-2 rounded-2xl bg-orange-800 dark:bg-slate-400 dark:text-black text-white hover:opacity-90 focus:outline-none"
                 aria-label={copied ? t.copied : t.cta}
             >
               {copied ? t.copied : t.cta}
@@ -116,9 +116,9 @@ export default function StopRagebait() {
 
             <a
                 href="#share"
-                className="px-5 py-2 rounded-2xl border border-orange-200 focus:outline-none focus:ring-2 focus:ring-orange-200"
+                className="px-5 py-2 rounded-2xl border border-slate-200 dark:border-slate-300 focus:outline-none"
             >
-              {t.share}
+              {t.shareButton}
             </a>
           </div>
 
@@ -129,7 +129,7 @@ export default function StopRagebait() {
         </section>
 
         <section className="max-w-4xl mx-auto px-6 grid md:grid-cols-2 gap-6 py-4">
-          <Card title={<span className="text-orange-700">{t.whyTitle}</span>}>
+          <Card title={<span className="">{t.whyTitle}</span>}>
             <ul className="list-disc pl-5 space-y-2 text-left">
               {t.why.map((w, i) => (
                   <li key={i}>{w}</li>
@@ -137,7 +137,7 @@ export default function StopRagebait() {
             </ul>
           </Card>
 
-          <Card title={<span className="text-orange-700">{t.quickTitle}</span>}>
+          <Card title={<span className="">{t.quickTitle}</span>}>
             <ul className="list-disc pl-5 space-y-2">
               {t.quick.map((q, i) => (
                   <li key={i}>{q}</li>
@@ -145,27 +145,42 @@ export default function StopRagebait() {
             </ul>
           </Card>
 
-          <Card title={<span className="text-orange-700">{t.dosTitle}</span>}>
+          <Card title={<span className="">{t.dosTitle}</span>}>
             <Checklist items={t.dos} good />
           </Card>
 
-          <Card title={<span className="text-orange-700">{t.dontsTitle}</span>}>
+          <Card title={<span className="">{t.dontsTitle}</span>}>
             <Checklist items={t.donts} />
           </Card>
         </section>
 
         <section className="max-w-4xl mx-auto px-6 py-6">
-          <h3 className="text-2xl font-semibold mb-4">{<span className="text-orange-800 dark:text-orange-200">{t.examplesTitle}</span>}</h3>
+          <h3 className="text-2xl font-semibold mb-4">{t.examplesTitle}</h3>
           <div className="grid gap-4">
-            <Example bad={t.ex1bad} good={t.ex1good} />
-            <Example bad={t.ex2bad} good={t.ex2good} />
-            <Example bad={t.ex3bad} good={t.ex3good} />
+            <Example bad={t.ex1bad} good={t.ex1good} t={t} />
+            <Example bad={t.ex2bad} good={t.ex2good} t={t} />
+            <Example bad={t.ex3bad} good={t.ex3good} t={t} />
           </div>
+        </section>
+
+        <section className="max-w-4xl mx-auto px-6 py-6">
+          <h3 className="text-2xl font-semibold mb-4">{t.ragebaitGuide.title}</h3>
+          <Card>
+            <p className="mb-3 tracking-wide">{t.ragebaitGuide.description}</p>
+            <ul className="list-item pl-5 space-y-2">
+              {t.ragebaitGuide.li.map((item, i) => {
+                const emojis = ["🚫", "🧠", "🔍", "⚔️", "🚨", "🧘"];
+                return (
+                    <li key={i} dangerouslySetInnerHTML={{ __html: `${emojis[i]} ${item.replace(/\*(.*?)\*/g, "<strong>$1</strong>")}` }} />
+                );
+              })}
+            </ul>
+          </Card>
         </section>
 
         <section id="share" className="max-w-4xl mx-auto px-6 py-6">
           <div className="rounded-2xl border p-4 bg-orange-50 dark:bg-transparent">
-            <p className="text-sm">🔗 {lang === "de" ? "Gefällt dir dieser Denkzettel? Teile den Link oder nutze die Badges." : "Like this reminder? Share the link or use the badge."}</p>
+            <p className="text-sm">🔗 {t.share}</p>
             <div className="mt-4 flex flex-wrap items-center gap-3">
               <Badge text="stopragebait.com" />
               <Badge text="#StopRagebait" />
@@ -175,9 +190,12 @@ export default function StopRagebait() {
           </div>
         </section>
 
-        <footer className="max-w-4xl mx-auto px-6 py-10 text-sm text-center">
-          <div>{t.footerLeft} • {t.footerRight}</div>
-          <div>You want to translate into your language? Open a <a href="https://github.com/FelixTPG/stopragebait.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}>GitHub</a> pull request!</div>
+        <footer className="max-w-4xl mx-auto px-6 py-10 md:border-t border-slate-200 dark:border-slate-800">
+          <div className="flex flex-col md:flex-row items-start md:justify-between gap 4">
+            <div className="text-sm text-slate-600 dark:text-slate-400">{t.footerLeft}</div>
+            <div className="text-sm text-slate-600 dark:text-slate-400">{t.footerRight}</div>
+          </div>
+          <div className="text-sm text-slate-600 dark:text-slate-400">You want to translate into your language? Open a <a href="https://github.com/FelixTPG/stopragebait.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}>GitHub</a> pull request!</div>
         </footer>
       </main>
   );
@@ -187,10 +205,10 @@ export default function StopRagebait() {
    jsx components
    -------------------------- */
 
-function Card({ title, children }) {
+function Card({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-      <div className="rounded-2xl border p-5 shadow-sm bg-white dark:bg-slate-800">
-        <h3 className="text-lg font-semibold mb-3">{title}</h3>
+      <div className="rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm bg-white/70 dark:bg-slate-900/70 backdrop-blur">
+        {title && <h3 className="text-lg font-semibold mb-3">{title}</h3>}
         {children}
       </div>
   );
@@ -213,16 +231,16 @@ function Checklist({ items, good = false }) {
   );
 }
 
-function Example({ bad, good }) {
+function Example({ bad, good, t }: { bad: string; good: string, t: any }) {
   return (
       <div className="grid md:grid-cols-2 gap-4">
-        <div className="rounded-2xl border p-4 bg-red-200 dark:bg-red-900 dark:text-white">
-          <div className="text-xs uppercase tracking-wide font-bold">Ragebait</div>
-          <p className="mt-2 font-medium">{bad}</p>
+        <div className="rounded-2xl border border-rose-200 dark:border-rose-900/40 p-4 bg-rose-50/60 dark:bg-rose-950/20">
+          <div className="text-xs uppercase tracking-wide text-rose-700 dark:text-rose-300">{t.bad}</div>
+          <p className="mt-2 text-rose-900 dark:text-rose-200 font-medium">{bad}</p>
         </div>
-        <div className="rounded-2xl border p-4 bg-green-200 dark:bg-green-900 dark:text-white">
-          <div className="text-xs uppercase tracking-wide font-bold">Better</div>
-          <p className="mt-2 font-medium">{good}</p>
+        <div className="rounded-2xl border border-emerald-200 dark:border-emerald-900/40 p-4 bg-emerald-50/60 dark:bg-emerald-950/20">
+          <div className="text-xs uppercase tracking-wide text-emerald-700 dark:text-emerald-300">{t.good}</div>
+          <p className="mt-2 text-emerald-900 dark:text-emerald-200 font-medium">{good}</p>
         </div>
       </div>
   );
@@ -231,7 +249,7 @@ function Example({ bad, good }) {
 function Badge({ text }) {
   return (
       <span className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-sm select-none">
-      <span className="h-2 w-2 rounded-full bg-orange-400" aria-hidden></span>
+      <span className="h-2 w-2 rounded-full bg-slate-400" aria-hidden></span>
         {text}
     </span>
   );
@@ -250,9 +268,9 @@ function ThemeToggle() {
   return (
       <button
           onClick={() => setDark(d => !d)}
-          className="px-3 py-1 rounded-2xl border focus:outline-none focus:ring-1 focus:ring-orange-200"
+          className="px-3 py-1 rounded-2xl border border-slate-400 focus:outline-none cursor-pointer"
           aria-pressed={dark}
-          aria-label={dark ? "Wechsel zu hellem Theme" : "Wechsel zu dunklem Theme"}
+          aria-label="Change the white/dark theme of the website"
       >
         {dark ? "🌙" : "☀️"}
       </button>

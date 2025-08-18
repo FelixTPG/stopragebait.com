@@ -1,15 +1,15 @@
 {
   "de": {
-    "title": "Stop Ragebait",
-    "tagline": "Ragebait stoppen — bevor #Ausflippen Trend wird.",
-    "sub": "Kurze Erinnerung: Ausrasten ist einfach, konstruktiv sein ist schwieriger (und cooler).",
+    "title": "Stoppe Ragebait",
+    "tagline": "Bitte keine Wutköder.",
+    "sub": "Sag gleich, worum es wirklich geht – ohne künstliche Empörung.",
     "cta": "Link kopieren",
     "copied": "Kopiert!",
     "whyTitle": "Warum das wichtig ist",
     "why": [
-      "Ragebait verwandelt Diskussionen in Schaulaufen statt Problemlösung.",
-      "Er sorgt für laute Reaktionen, aber selten für echte Erkenntnisse.",
-      "Weniger Ausraster = mehr Zeit für Lösungen (und Nerven schonen)."
+      "Ragebait lenkt vom Inhalt ab und verschlechtert den Umgangston.",
+      "Es erzeugt viele Reaktionen, aber wenig Verständnis oder Lösungen.",
+      "Klare, nüchterne Beiträge sparen Zeit – für dich und alle anderen."
     ],
     "dosTitle": "Mach’s so",
     "dos": [
@@ -25,9 +25,9 @@
       "Screenshots ohne Quelle oder Kontext.",
       "Absichtliches Gaslighting oder Anschuldigungen ohne Beleg."
     ],
-    "examplesTitle": "Beispiele (mehr Ausraster, mehr Humor)",
-    "bad": "Ragebait (Ausraster-Version)",
-    "good": "Besser (ruhiger, nützlicher)",
+    "examplesTitle": "Beispiele",
+    "bad": "Wutköder",
+    "good": "Besser",
     "ex1bad": "HAHAHA, du bist so schlecht in diesem Spiel! 😂🫵",
     "ex1good": "Mir fällt auf, dass du in diesem Spiel nicht so gut bist. Willst du Tipps, wie du besser werden kannst?",
     "ex2bad": "DIE SIND ALLE SO UNFÄHIG!!! Wir müssen sie rauswerfen!!! 👎",
@@ -40,22 +40,34 @@
       "Ist da eine echte Frage drin oder nur Ausrasten?",
       "Kannst du das mit einem Augenzwinkern sagen statt Caps Lock?"
     ],
-    "footerLeft": "Dieses Projekt ist frei nutzbar (CC BY 4.0).",
+    "ragebaitGuide": {
+      "title": "Was tun, wenn du Ragebait siehst",
+      "description": "Etwas gesehen, das dich wütend macht? Lass dein Affenhirn nicht die Kontrolle übernehmen. Folge diesem einfachen Leitfaden:",
+      "li": [
+        "*Finger weg von der Tastatur:* Leg die Hände weg. Geh einen Schritt zurück. Dein Finger sind eine Massenvernichtungswaffe.",
+        "*Tief durchatmen:* Ein sechs-sekündiger mentaler Reset verhindert einen kompletten Nerd-Ausbruch. Das ist Wissenschaft, kein Wellness",
+        "*Erkenne den Köder:* Ist es Meinung, die als Fakt verkauft wird? Ist es nur dazu da, zu nerven? Glückwunsch, du hast den Troll gefunden.",
+        "*Den Troll verhungern lassen:* Nicht reagieren. Dein Klick ist ihr Futter. Deine Antwort ist ihr Sieg. Sie wollen deine Wut. Gib sie ihnen nicht.",
+        "*Melden und abhauen:* Melde den Beitrag, wenn er gegen Regeln verstößt. Schließe dann sofort den Tab. Verlass den Tatort, bevor du in Versuchung gerätst, zurückzukehren.",
+        "*Such dir ein Hobby:* Geh raus. Fühl mal Gras. Deine Würde ist mehr wert als ein sinnloser Online-Streit."
+      ]
+    },
+    "footerLeft": "Dieses Projekt ist frei nutzbar. (CC BY 3.0)",
     "footerRight": "Gemacht mit ♥\uFE0F und einem Hauch Sarkasmus.",
-    "share": "Teilen",
-    "ogDesc": "Stop Ragebait — eine kleine, humorvolle Erinnerung, bevor wir alle ausrasten."
+    "shareButton": "Teilen",
+    "share": "Magst du diese Erinnerung? Teile den Link oder nutze einen Hashtag."
   },
   "en": {
     "title": "Stop Ragebait",
-    "tagline": "Stop ragebait — before losing it becomes a trend.",
-    "sub": "Quick reminder: losing your cool is easy, being constructive is harder (and cooler).",
+    "tagline": "Please, no ragebait.",
+    "sub": "Say what it’s really about – without artificial outrage.",
     "cta": "Copy link",
     "copied": "Copied!",
     "whyTitle": "Why it matters",
     "why": [
-      "Ragebait turns discussions into spectacle, not problem-solving.",
-      "It drives loud reactions, but rarely insight.",
-      "Less rage = more time for solutions (and calmer brains)."
+      "Ragebait distracts from the content and worsens the tone of discussion.",
+      "It generates many reactions but little understanding or solutions.",
+      "Clear, sober posts save time – for you and everyone else."
     ],
     "dosTitle": "Do this",
     "dos": [
@@ -71,9 +83,9 @@
       "Screenshots without source or context.",
       "Accusations without evidence."
     ],
-    "examplesTitle": "Examples (amped-up outrage, tongue-in-cheek)",
-    "bad": "Ragebait (meltdown version)",
-    "good": "Better (calmer, more useful)",
+    "examplesTitle": "Examples",
+    "bad": "Ragebait",
+    "good": "Better",
     "ex1bad": "HAHAHA, you’re so bad at this game! 😂🫵",
     "ex1good": "I noticed you’re not doing so well in this game. Want some tips to improve?",
     "ex2bad": "THEY’RE ALL SO INCOMPETENT!!! We need to kick them out!!! 👎",
@@ -86,9 +98,21 @@
       "Is there a real question or just an outburst?",
       "Can you add a wink instead of full caps?"
     ],
-    "footerLeft": "This project is free to use (CC BY 4.0).",
+    "ragebaitGuide": {
+      "title": "What to do if you see ragebait",
+      "description": "See something that makes you mad? Don't let your monkey brain take over. Follow this simple guide:",
+      "li": [
+        "*Stop Typing:* Put down the keyboard. Back away from the screen. Your thumb is a weapon of mass irritation.",
+        "*Take a Breath:* A six-second mental reset prevents a full-blown \"uhm, actually\" meltdown. This is science, not wellness.",
+        "*Identify the Bait:* Is it opinion presented as fact? Is it designed solely to annoy? If yes, you've found the troll.",
+        "*Starve the Beast:* Do not engage. Your click is their food. Your reply is their victory. They want your anger. Don't give it to them.",
+        "*Report & Run:* Report the post if it violates terms. Then, immediately close the tab. Leave the scene of the crime before you're tempted to go back.",
+        "*Find a Hobby:* Go outside. Touch some grass. Your dignity is worth more than a pointless online argument."
+      ]
+    },
+    "footerLeft": "This project is free to use. (CC BY 3.0)",
     "footerRight": "Made with ♥\uFE0F and a dash of sarcasm.",
-    "share": "Share",
-    "ogDesc": "Stop Ragebait — a tiny, humorous reminder to avoid ragebait."
+    "shareButton": "Share",
+    "share": "Like this reminder? Share the link or use a hashtag."
   }
 }
