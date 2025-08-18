@@ -186,7 +186,7 @@ export default function StopRagebait() {
 
         <footer className="max-w-4xl mx-auto px-6 py-10 text-sm text-center">
           <div>{t.footerLeft} • {t.footerRight}</div>
-          <div>You want to translate into your language? Open a GitHub pull request!</div>
+          <div>You want to translate into your language? Open a <a href="https://github.com/FelixTPG/stopragebait.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}>GitHub</a> pull request!</div>
         </footer>
       </main>
   );
