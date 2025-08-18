@@ -7,7 +7,7 @@ export default function StopRagebait() {
   // default language
   const defaultLang = (() => {
     if (typeof navigator !== "undefined") {
-      // navigator.languages ist ein Array von Prioritäten
+      // priority to browser language
       const langs = navigator.languages || [navigator.language || "en"];
       for (const candidate of langs) {
         if (!candidate) continue;
@@ -18,7 +18,7 @@ export default function StopRagebait() {
     return "en";
   })();
 
-  // Lade gespeicherte Sprache aus localStorage oder nutze default
+  // load saved language from localStorage or use default
   const [lang, setLang] = useState(() => {
     try {
       const saved = typeof window !== "undefined" && window.localStorage ? localStorage.getItem("sr_lang") : null;
@@ -28,25 +28,15 @@ export default function StopRagebait() {
     }
   });
 
-  // t ist die Übersetzungsmap für die aktuelle Sprache
+  // t = translations for current language
   const t = useMemo(() => translations[lang] || translations["en"], [lang]);
 
-  // Kopier-Status (für UI)
+  // ui copy status
   const [copied, setCopied] = useState(false);
 
-  // Wenn Sprache wechselt: setze HTML lang, Title & Meta Description und speichere
+  // when language changes, update document lang and localStorage
   useEffect(() => {
     document.documentElement.lang = lang;
-    document.title = `${t.title} – stopragebait.com`;
-
-    // Meta description updaten (falls vorhanden)
-    let meta = document.querySelector('meta[name="description"]');
-    if (!meta) {
-      meta = document.createElement("meta");
-      meta.setAttribute("name", "description");
-      document.head.appendChild(meta);
-    }
-    meta.setAttribute("content", t.ogDesc || "");
 
     try {
       localStorage.setItem("sr_lang", lang);
@@ -55,17 +45,18 @@ export default function StopRagebait() {
     }
   }, [lang, t.title, t.ogDesc]);
 
-  // Copy-Funktion: versucht Clipboard API, sonst Fallback
+  // link copy - try async clipboard first, fallback to textarea
   const copy = useCallback(async () => {
-    const text = typeof window !== "undefined" ? window.location.href : "";
-    // try async clipboard first
+    const baseUrl = typeof window !== "undefined" ? window.location.origin : "";
+
     try {
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText(text);
+        // async
+        await navigator.clipboard.writeText(baseUrl);
       } else {
-        // Fallback: temporäres textarea
+        // fallback
         const ta = document.createElement("textarea");
-        ta.value = text;
+        ta.value = baseUrl;
         ta.style.position = "fixed";
         ta.style.opacity = "0";
         document.body.appendChild(ta);
@@ -75,7 +66,7 @@ export default function StopRagebait() {
         document.body.removeChild(ta);
       }
       setCopied(true);
-      // ARIA-Live wird im DOM angezeigt; setTimeout für UI-Reset
+      // aria-live feedback
       setTimeout(() => setCopied(false), 1400);
     } catch (e) {
       // ignore copy errors
@@ -131,7 +122,7 @@ export default function StopRagebait() {
             </a>
           </div>
 
-          {/* ARIA-Live Region für Copy Feedback (nur für Screenreader) */}
+          {/* aria-live region for dom */}
           <div aria-live="polite" className="sr-only">
             {copied ? t.copiedAria || t.copied : ""}
           </div>
@@ -193,7 +184,7 @@ export default function StopRagebait() {
 }
 
 /* --------------------------
-   Hilfs-Komponenten (JSX)
+   jsx components
    -------------------------- */
 
 function Card({ title, children }) {
@@ -246,10 +237,6 @@ function Badge({ text }) {
   );
 }
 
-/* ThemeToggle: verwaltet dark-class am root
-   - initial prüft prefers-color-scheme
-   - Benutzer kann umschalten (persistiert nicht, optional erweiterbar)
-*/
 function ThemeToggle() {
   const prefersDark = typeof window !== "undefined" && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [dark, setDark] = useState(prefersDark);
