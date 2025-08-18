@@ -1,0 +1,94 @@
+{
+  "de": {
+    "title": "Stop Ragebait",
+    "tagline": "Ragebait stoppen — bevor #Ausflippen Trend wird.",
+    "sub": "Kurze Erinnerung: Ausrasten ist einfach, konstruktiv sein ist schwieriger (und cooler).",
+    "cta": "Link kopieren",
+    "copied": "Kopiert!",
+    "whyTitle": "Warum das wichtig ist",
+    "why": [
+      "Ragebait verwandelt Diskussionen in Schaulaufen statt Problemlösung.",
+      "Er sorgt für laute Reaktionen, aber selten für echte Erkenntnisse.",
+      "Weniger Ausraster = mehr Zeit für Lösungen (und Nerven schonen)."
+    ],
+    "dosTitle": "Mach’s so",
+    "dos": [
+      "Sag kurz, was passiert ist (wer, was, wann) — ohne Romanlänge.",
+      "Sag, was du willst: Erklärung, Quellen, Rat oder einfach eine ehrliche Meinung.",
+      "Gib einen Link oder markiere klar, wenn es nur ein Bauchgefühl ist.",
+      "Ein bisschen Humor hilft — aber nicht, um den Kern zu verbergen."
+    ],
+    "dontsTitle": "Lass das",
+    "donts": [
+      "Ein-Wort‑Empörungsposts (\"Ernsthaft?!\") oder sinnfreie Caps‑LOCK‑Shouts.",
+      "Dramatische Generalisierungen (\"Alle/Immer/Nie\").",
+      "Screenshots ohne Quelle oder Kontext.",
+      "Absichtliches Gaslighting oder Anschuldigungen ohne Beleg."
+    ],
+    "examplesTitle": "Beispiele (mehr Ausraster, mehr Humor)",
+    "bad": "Ragebait (Ausraster-Version)",
+    "good": "Besser (ruhiger, nützlicher)",
+    "ex1bad": "HAHAHA, du bist so schlecht in diesem Spiel! 😂🫵",
+    "ex1good": "Mir fällt auf, dass du in diesem Spiel nicht so gut bist. Willst du Tipps, wie du besser werden kannst?",
+    "ex2bad": "DIE SIND ALLE SO UNFÄHIG!!! Wir müssen sie rauswerfen!!! 👎",
+    "ex2good": "Ich sehe, dass Person X Sache Y unterstützt hat ([Quellenangabe]). Welche Gründe könnten dahinterstehen?",
+    "ex3bad": "Guckt euch den mal an!!! Jeder MUSS das wissen!!! #Skandal #WTF 😱",
+    "ex3good": "Mir kommt Verhalten X fragwürdig vor, weil [Grund]. Gibt es eine alternative Erklärung?",
+    "quickTitle": "Schnell-Check (bevor du postest)",
+    "quick": [
+      "Hast du 1–2 Quellen oder Fakten?",
+      "Ist da eine echte Frage drin oder nur Ausrasten?",
+      "Kannst du das mit einem Augenzwinkern sagen statt Caps Lock?"
+    ],
+    "footerLeft": "Dieses Projekt ist frei nutzbar (CC BY 4.0).",
+    "footerRight": "Gemacht mit ♥\uFE0F und einem Hauch Sarkasmus.",
+    "share": "Teilen",
+    "ogDesc": "Stop Ragebait — eine kleine, humorvolle Erinnerung, bevor wir alle ausrasten."
+  },
+  "en": {
+    "title": "Stop Ragebait",
+    "tagline": "Stop ragebait — before losing it becomes a trend.",
+    "sub": "Quick reminder: losing your cool is easy, being constructive is harder (and cooler).",
+    "cta": "Copy link",
+    "copied": "Copied!",
+    "whyTitle": "Why it matters",
+    "why": [
+      "Ragebait turns discussions into spectacle, not problem-solving.",
+      "It drives loud reactions, but rarely insight.",
+      "Less rage = more time for solutions (and calmer brains)."
+    ],
+    "dosTitle": "Do this",
+    "dos": [
+      "State briefly what happened (who, what, when) — no novel required.",
+      "Say what you want: explanation, sources, advice, or honest opinions.",
+      "Include a link or flag it as a hunch if you’re not sure.",
+      "A little humor’s fine — but don’t hide the point."
+    ],
+    "dontsTitle": "Avoid this",
+    "donts": [
+      "One-word outrage posts (\"Seriously?!\") or all‑caps tirades.",
+      "Dramatic generalizations (\"Everyone/Always/Never\").",
+      "Screenshots without source or context.",
+      "Accusations without evidence."
+    ],
+    "examplesTitle": "Examples (amped-up outrage, tongue-in-cheek)",
+    "bad": "Ragebait (meltdown version)",
+    "good": "Better (calmer, more useful)",
+    "ex1bad": "HAHAHA, you’re so bad at this game! 😂🫵",
+    "ex1good": "I noticed you’re not doing so well in this game. Want some tips to improve?",
+    "ex2bad": "THEY’RE ALL SO INCOMPETENT!!! We need to kick them out!!! 👎",
+    "ex2good": "I see that Person X supported Y ([source]). What reasons might they have for that?",
+    "ex3bad": "Look at this guy!!! Everyone NEEDS to see this!!! #Scandal #WTF 😱",
+    "ex3good": "I find Behavior X questionable because [reason]. Is there an alternative explanation?",
+    "quickTitle": "Quick pre-post check",
+    "quick": [
+      "Do you have 1–2 facts or links?",
+      "Is there a real question or just an outburst?",
+      "Can you add a wink instead of full caps?"
+    ],
+    "footerLeft": "This project is free to use (CC BY 4.0).",
+    "footerRight": "Made with ♥\uFE0F and a dash of sarcasm.",
+    "share": "Share",
+    "ogDesc": "Stop Ragebait — a tiny, humorous reminder to avoid ragebait."
+  }
+}
