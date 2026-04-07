@@ -1,11 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{js,ts,jsx,tsx}", // Damit Tailwind alle Klassen in deinem Code scannt
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {},
   },
-  darkMode: "class", // Für deinen ThemeToggle
+  darkMode: "class",
   plugins: [],
 };

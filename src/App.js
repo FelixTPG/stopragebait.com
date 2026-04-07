@@ -85,7 +85,7 @@ export default function StopRagebait() {
           </div>
 
           <div className="flex items-center gap-2">
-            <label htmlFor="sr-lang-select" className="sr-only">Sprache wählen</label>
+            <label htmlFor="sr-lang-select" className="sr-only">Select language</label>
             <select
                 id="sr-lang-select"
                 value={lang}
@@ -113,13 +113,6 @@ export default function StopRagebait() {
             >
               {copied ? t.copied : t.cta}
             </button>
-
-            <a
-                href="#share"
-                className="px-5 py-2 rounded-2xl border border-slate-200 dark:border-slate-300 focus:outline-none"
-            >
-              {t.shareButton}
-            </a>
           </div>
 
           {/* aria-live region for dom */}
