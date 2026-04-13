@@ -2,7 +2,7 @@ import React, { useMemo, useState, useEffect, useCallback } from "react";
 import translations from "./translation.json";
 
 export default function StopRagebait() {
-  const supported = ["de", "en"];
+  const supported = Object.keys(translations);
 
   // default language
   const defaultLang = (() => {
@@ -93,8 +93,9 @@ export default function StopRagebait() {
                 className="px-3 py-1 rounded-2xl border border-slate-400 focus:outline-none dark:bg-slate-700 dark:text-white cursor-pointer"
                 aria-label="Choose language"
             >
-              <option value="de">🇩🇪</option>
-              <option value="en">🇬🇧</option>
+              {supported.map((code) => (
+                <option key={code} value={code}>{translations[code].flag}</option>
+              ))}
             </select>
 
             <ThemeToggle />

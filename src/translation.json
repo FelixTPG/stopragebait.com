@@ -1,5 +1,6 @@
 {
   "de": {
+    "flag": "🇩🇪",
     "title": "Stop Ragebait",
     "tagline": "Dieser Beitrag ist ein Köder. Stoppe den Ragebait.",
     "sub": "Du hast diesen Link erhalten, weil dein Beitrag (oder deine Reaktion darauf) künstliche Wut schürt, statt echten Mehrwert zu bieten.",
@@ -56,6 +57,7 @@
     "share": "Magst du diese Erinnerung? Teile den Link oder nutze den Hashtag #StopRagebait."
   },
   "en": {
+    "flag": "🇬🇧",
     "title": "Stop Ragebait",
     "tagline": "This post is a trap. Stop the ragebait.",
     "sub": "You received this link because your post (or your reaction to it) is fueling artificial rage instead of providing value.",
@@ -110,5 +112,119 @@
     "footerLeft": "This project is free to use. (CC BY 3.0)",
     "footerRight": "Made with ♥️ and a dash of sarcasm.",
     "share": "Like this reminder? Share the link or use the hashtag #StopRagebait."
+  },
+  "nl": {
+    "flag": "🇳🇱",
+    "title": "Stop Ragebait",
+    "tagline": "Deze post is een val. Stop de ragebait.",
+    "sub": "Je hebt deze link ontvangen omdat jouw post (of je reactie erop) kunstmatige woede aanwakkert in plaats van echte waarde te bieden.",
+    "cta": "Link kopiëren",
+    "copied": "Gekopieerd!",
+    "whyTitle": "Waarom dit belangrijk is",
+    "why": [
+      "Ragebait manipuleert emoties om kliks en reacties af te dwingen.",
+      "Het vergiftigt de online discussie voor goedkope aandacht.",
+      "Het maakt ons allemaal dommer omdat we tegen schaduwen vechten in plaats van feiten."
+    ],
+    "dosTitle": "Aan de maker: Doe het beter",
+    "dos": [
+      "Bekritiseer het onderwerp, niet de persoon.",
+      "Laat de hyperbolen weg ('Ongelooflijk!', 'Schandaal!').",
+      "Link naar echte bronnen in plaats van screenshots te vervormen.",
+      "Accepteer dat andere meningen bestaan zonder uit je dak te gaan."
+    ],
+    "dontsTitle": "Aan de community: Trap er niet in",
+    "donts": [
+      "Schrijf geen boze reactie – dat levert de maker geld op.",
+      "Deel de post niet om te laten zien hoe 'dom' hij is.",
+      "Ga niet mee in gaslighting of ad-hominem aanvallen.",
+      "Verspil geen tijd aan iemand die alleen wil provoceren."
+    ],
+    "examplesTitle": "De intentie herkennen",
+    "bad": "Ragebait-tactiek",
+    "good": "Eerlijke discussie",
+    "ex1bad": "Opzettelijke fouten maken zodat mensen ze willen corrigeren.",
+    "ex1good": "Zorgvuldig werken en correcties dankbaar aannemen.",
+    "ex2bad": "Complexe onderwerpen reduceren tot 'wij tegen zij'.",
+    "ex2good": "Ruimte laten voor nuance en verschillende perspectieven tonen.",
+    "ex3bad": "Boze emoji’s en caps lock gebruiken als vervanging voor argumenten.",
+    "ex3good": "Blijf rustig. Wie het hardst schreeuwt, heeft meestal het zwakste punt.",
+    "quickTitle": "Snelle check (voor je post)",
+    "quick": [
+      "Heb je feiten of alleen emotie?",
+      "Wil je informeren of alleen gelijk krijgen?",
+      "Zou je dit ook zeggen zonder de anonimiteit van het internet?"
+    ],
+    "ragebaitGuide": {
+      "title": "Je schild tegen het algoritme",
+      "description": "Als een post je meteen boos maakt, is dat geen toeval. Het is ontworpen. Zo doorbreek je de cirkel:",
+      "li": [
+        "*Pauze:* Als je meteen wilt reageren, heeft de bait gewerkt. Adem even.",
+        "*Check:* Wil de maker een oplossing of alleen aandacht?",
+        "*Uithongeren:* Het beste wat je tegen ragebait kunt doen is: niets. Helemaal niets.",
+        "*Reageren:* Moet je toch reageren? Post deze link en ga weer verder.",
+        "*Raak gras aan:* De wereld buiten je feed is meestal een stuk rustiger."
+      ]
+    },
+    "footerLeft": "Dit project is vrij te gebruiken. (CC BY 3.0)",
+    "footerRight": "Gemaakt met ♥️ en een vleugje sarcasme.",
+    "share": "Vind je dit een goede reminder? Deel de link of gebruik de hashtag #StopRagebait."
+  },
+  "fr": {
+    "flag": "🇫🇷",
+    "title": "Stop Ragebait",
+    "tagline": "Ce post est un piège. Arrêtez le ragebait.",
+    "sub": "Vous avez reçu ce lien parce que votre post (ou votre réaction) attise une colère artificielle au lieu d'apporter de la valeur.",
+    "cta": "Copier le lien",
+    "copied": "Copié !",
+    "whyTitle": "Pourquoi c'est important",
+    "why": [
+      "Le ragebait manipule les émotions pour forcer les clics et les commentaires.",
+      "Il empoisonne la culture en ligne pour une visibilité bon marché.",
+      "Il nous rend tous ridicules en combattant des fantômes plutôt que des faits."
+    ],
+    "dosTitle": "Au Créateur : Faites mieux",
+    "dos": [
+      "Critiquez le sujet, pas la personne.",
+      "Abandonnez les hyperboles ('Incroyable !', 'Scandale !').",
+      "Citez de vraies sources au lieu de falsifier des captures d'écran.",
+      "Acceptez que d'autres opinions existent sans perdre votre calme."
+    ],
+    "dontsTitle": "À la Communauté : N'y tombez pas",
+    "donts": [
+      "N'écrivez pas de commentaire en colère – ça rémunère le créateur.",
+      "Ne partagez pas le post juste pour montrer à quel point c'est 'nul'.",
+      "Ne vous engagez pas dans du gaslighting ou des attaques ad hominem.",
+      "Ne gaspillez pas votre temps sur quelqu'un qui veut juste provoquer."
+    ],
+    "examplesTitle": "Repérer l'intention",
+    "bad": "Tactique Ragebait",
+    "good": "Discours Honnête",
+    "ex1bad": "Faire des erreurs délibérées pour que les gens se sentent obligés de les corriger.",
+    "ex1good": "Être rigoureux et accepter les corrections avec grâce.",
+    "ex2bad": "Réduire des sujets complexes à 'Nous contre Eux'.",
+    "ex2good": "Accepter la nuance et examiner différentes perspectives.",
+    "ex3bad": "Utiliser des emojis de rage et des majuscules en guise d'arguments.",
+    "ex3good": "Restez calme. Celui qui crie le plus fort a généralement le point le plus faible.",
+    "quickTitle": "Vérification rapide avant de publier",
+    "quick": [
+      "Avez-vous des faits ou juste le cœur qui s'emballe ?",
+      "Voulez-vous informer ou juste avoir raison ?",
+      "Diriez-vous cela sans le masque de l'anonymat ?"
+    ],
+    "ragebaitGuide": {
+      "title": "Votre bouclier contre l'algorithme",
+      "description": "Si un post vous rend immédiatement agressif, ce n'est pas un hasard. C'est voulu. Voici comment briser le cycle :",
+      "li": [
+        "*Pause :* Si vous voulez taper immédiatement, le piège a fonctionné. Respirez.",
+        "*Vérifiez :* Le créateur veut-il une solution ou juste de l'attention ?",
+        "*Affamez :* La meilleure chose à faire contre le ragebait : rien. Du tout.",
+        "*Répondez :* Si vous devez réagir, postez ce lien et partez.",
+        "*Déconnectez :* Le monde en dehors de votre fil d'actualité est généralement bien plus paisible."
+      ]
+    },
+    "footerLeft": "Ce projet est libre d'utilisation. (CC BY 3.0)",
+    "footerRight": "Fait avec ♥️ et une pincée de sarcasme.",
+    "share": "Vous aimez ce rappel ? Partagez le lien ou utilisez le hashtag #StopRagebait."
   }
 }
