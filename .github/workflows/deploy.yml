@@ -31,5 +31,5 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: build/
-          server-dir: /www/
+          server-dir: /www/stopragebait.com/
           dangerous-clean-slate: true
