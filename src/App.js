@@ -75,26 +75,27 @@ export default function StopRagebait() {
   }, []);
 
   return (
-      <main className="min-h-screen w-full bg-gradient-to-b from-orange-100 to-amber-50 text-orange-900 dark:text-white dark:from-slate-950 dark:to-slate-900  transition-colors">
+      <main className="min-h-screen w-full bg-gradient-to-br from-orange-50 via-orange-100/50 to-amber-50 text-slate-800 dark:text-slate-200 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 transition-colors duration-500 selection:bg-orange-200 dark:selection:bg-orange-900/50">
         <header className="max-w-4xl mx-auto px-6 pt-12 pb-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="text-3xl" aria-hidden>
+            <div className="text-3xl drop-shadow-sm" aria-hidden>
               💥
             </div>
-            <h1 className="text-xl font-extrabold tracking-tight">stopragebait.com</h1>
+            <h1 className="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">stopragebait.com</h1>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             <label htmlFor="sr-lang-select" className="sr-only">Select language</label>
             <select
                 id="sr-lang-select"
                 value={lang}
                 onChange={(e) => setLang(e.target.value)}
-                className="px-3 py-1 rounded-2xl border border-slate-400 focus:outline-none dark:bg-slate-700 dark:text-white cursor-pointer"
+                className="pl-3 pr-8 py-2 rounded-xl border border-slate-300 bg-white/60 dark:border-slate-700 dark:bg-slate-800/60 focus:outline-none focus:ring-2 focus:ring-orange-500/50 backdrop-blur-sm transition-all cursor-pointer text-sm font-medium hover:bg-white dark:hover:bg-slate-800 appearance-none"
                 aria-label="Choose language"
+                style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 0.5rem center', backgroundSize: '1em' }}
             >
               {supported.map((code) => (
-                <option key={code} value={code}>{translations[code].flag}</option>
+                  <option key={code} value={code}>{translations[code].flag}</option>
               ))}
             </select>
 
@@ -102,17 +103,21 @@ export default function StopRagebait() {
           </div>
         </header>
 
-        <section className="max-w-4xl mx-auto px-6 py-8">
-          <h2 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">{t.tagline}</h2>
-          <p className="mt-4 text-lg md:text-xl text-orange-900 dark:text-white">{t.sub}</p>
+        <section className="max-w-4xl mx-auto px-6 py-10 md:py-16">
+          <h2 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight text-slate-900 dark:text-white">
+            {t.tagline}
+          </h2>
+          <p className="mt-6 text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
+            {t.sub}
+          </p>
 
-          <div className="mt-6 flex justify-left gap-3">
+          <div className="mt-8 flex justify-left gap-3">
             <button
                 onClick={copy}
-                className="px-5 py-2 rounded-2xl bg-orange-800 dark:bg-slate-400 dark:text-black text-white hover:opacity-90 focus:outline-none"
+                className="px-6 py-3 rounded-2xl font-semibold bg-orange-600 text-white shadow-lg shadow-orange-600/20 hover:bg-orange-700 hover:shadow-xl hover:-translate-y-0.5 dark:bg-orange-500 dark:hover:bg-orange-400 dark:text-slate-950 transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 dark:focus:ring-offset-slate-950"
                 aria-label={copied ? t.copied : t.cta}
             >
-              {copied ? t.copied : t.cta}
+              {copied ? `✓ ${t.copied}` : t.cta}
             </button>
           </div>
 
@@ -122,60 +127,63 @@ export default function StopRagebait() {
           </div>
         </section>
 
-        <section className="max-w-4xl mx-auto px-6 grid md:grid-cols-2 gap-6 py-4">
-          <Card title={<span className="">{t.whyTitle}</span>}>
-            <ul className="list-disc pl-5 space-y-2 text-left">
+        <section className="max-w-4xl mx-auto px-6 grid md:grid-cols-2 gap-6 py-6">
+          <Card title={<span className="text-orange-600 dark:text-orange-400">{t.whyTitle}</span>}>
+            <ul className="list-disc pl-5 space-y-2.5 text-left text-slate-700 dark:text-slate-300 marker:text-orange-400 dark:marker:text-orange-500/70">
               {t.why.map((w, i) => (
                   <li key={i}>{w}</li>
               ))}
             </ul>
           </Card>
 
-          <Card title={<span className="">{t.quickTitle}</span>}>
-            <ul className="list-disc pl-5 space-y-2">
+          <Card title={<span className="text-orange-600 dark:text-orange-400">{t.quickTitle}</span>}>
+            <ul className="list-disc pl-5 space-y-2.5 text-slate-700 dark:text-slate-300 marker:text-orange-400 dark:marker:text-orange-500/70">
               {t.quick.map((q, i) => (
                   <li key={i}>{q}</li>
               ))}
             </ul>
           </Card>
 
-          <Card title={<span className="">{t.dosTitle}</span>}>
+          <Card title={<span>{t.dosTitle}</span>}>
             <Checklist items={t.dos} good />
           </Card>
 
-          <Card title={<span className="">{t.dontsTitle}</span>}>
+          <Card title={<span>{t.dontsTitle}</span>}>
             <Checklist items={t.donts} />
           </Card>
         </section>
 
-        <section className="max-w-4xl mx-auto px-6 py-6">
-          <h3 className="text-2xl font-semibold mb-4">{t.examplesTitle}</h3>
-          <div className="grid gap-4">
+        <section className="max-w-4xl mx-auto px-6 py-8">
+          <h3 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white">{t.examplesTitle}</h3>
+          <div className="grid gap-5">
             <Example bad={t.ex1bad} good={t.ex1good} t={t} />
             <Example bad={t.ex2bad} good={t.ex2good} t={t} />
             <Example bad={t.ex3bad} good={t.ex3good} t={t} />
           </div>
         </section>
 
-        <section className="max-w-4xl mx-auto px-6 py-6">
-          <h3 className="text-2xl font-semibold mb-4">{t.ragebaitGuide.title}</h3>
-          <Card>
-            <p className="mb-3 tracking-wide">{t.ragebaitGuide.description}</p>
-            <ul className="list-item pl-5 space-y-2">
+        <section className="max-w-4xl mx-auto px-6 py-8">
+          <h3 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white">{t.ragebaitGuide.title}</h3>
+          <Card className="!p-8">
+            <p className="mb-6 text-lg font-medium text-slate-800 dark:text-slate-200">{t.ragebaitGuide.description}</p>
+            <ul className="space-y-4">
               {t.ragebaitGuide.li.map((item, i) => {
                 const emojis = ["🚫", "🧠", "🔍", "⚔️", "🚨", "🧘"];
                 return (
-                    <li key={i} dangerouslySetInnerHTML={{ __html: `${emojis[i]} ${item.replace(/\*(.*?)\*/g, "<strong>$1</strong>")}` }} />
+                    <li key={i} className="flex items-start gap-4 text-slate-700 dark:text-slate-300">
+                      <span className="text-xl shrink-0 mt-0.5">{emojis[i]}</span>
+                      <span dangerouslySetInnerHTML={{ __html: item.replace(/\*(.*?)\*/g, "<strong class='text-slate-900 dark:text-white'>$1</strong>") }} />
+                    </li>
                 );
               })}
             </ul>
           </Card>
         </section>
 
-        <section id="share" className="max-w-4xl mx-auto px-6 py-6">
-          <div className="rounded-2xl border p-4 bg-orange-50 dark:bg-transparent">
-            <p className="text-sm">🔗 {t.share}</p>
-            <div className="mt-4 flex flex-wrap items-center gap-3">
+        <section id="share" className="max-w-4xl mx-auto px-6 py-8">
+          <div className="rounded-3xl border border-orange-200/50 dark:border-slate-800 p-6 bg-orange-50/50 dark:bg-slate-900/50 backdrop-blur-sm">
+            <p className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-4">🔗 {t.share}</p>
+            <div className="flex flex-wrap items-center gap-3">
               <Badge text="stopragebait.com" />
               <Badge text="#StopRagebait" />
               <Badge text="#Wutköder" />
@@ -184,12 +192,14 @@ export default function StopRagebait() {
           </div>
         </section>
 
-        <footer className="max-w-4xl mx-auto px-6 py-10 md:border-t border-slate-200 dark:border-slate-800">
-          <div className="flex flex-col md:flex-row items-start md:justify-between gap 4">
-            <div className="text-sm text-slate-600 dark:text-slate-400">{t.footerLeft}</div>
-            <div className="text-sm text-slate-600 dark:text-slate-400">{t.footerRight}</div>
+        <footer className="max-w-4xl mx-auto px-6 py-12 mt-8 md:border-t border-slate-200 dark:border-slate-800/80">
+          <div className="flex flex-col md:flex-row items-start md:justify-between gap-4 mb-4">
+            <div className="text-sm text-slate-500 dark:text-slate-400">{t.footerLeft}</div>
+            <div className="text-sm text-slate-500 dark:text-slate-400">{t.footerRight}</div>
           </div>
-          <div className="text-sm text-slate-600 dark:text-slate-400">You want to translate into your language? Open a <a href="https://github.com/FelixTPG/stopragebait.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline" }}>GitHub</a> pull request!</div>
+          <div className="text-sm text-slate-500 dark:text-slate-400">
+            You want to translate into your language? Open a <a href="https://github.com/FelixTPG/stopragebait.com" target="_blank" rel="noopener noreferrer" className="text-orange-600 dark:text-orange-400 hover:underline font-medium transition-colors">GitHub</a> pull request!
+          </div>
         </footer>
       </main>
   );
@@ -199,10 +209,10 @@ export default function StopRagebait() {
    jsx components
    -------------------------- */
 
-function Card({ title, children }: { title: string; children: React.ReactNode }) {
+function Card({ title, children, className = "" }) {
   return (
-      <div className="rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm bg-white/70 dark:bg-slate-900/70 backdrop-blur">
-        {title && <h3 className="text-lg font-semibold mb-3">{title}</h3>}
+      <div className={`rounded-3xl border border-white/50 dark:border-slate-700/50 p-6 shadow-xl shadow-slate-200/40 bg-white/60 dark:bg-slate-800/60 dark:shadow-none backdrop-blur-md transition-all hover:bg-white/80 dark:hover:bg-slate-800/80 ${className}`}>
+        {title && <h3 className="text-xl font-bold mb-4 text-slate-900 dark:text-white">{title}</h3>}
         {children}
       </div>
   );
@@ -210,31 +220,35 @@ function Card({ title, children }: { title: string; children: React.ReactNode })
 
 function Checklist({ items, good = false }) {
   return (
-      <ul className="space-y-2">
+      <ul className="space-y-3">
         {items.map((it, i) => (
-            <li key={i} className="flex items-start gap-3">
-              <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full">
-                <span className={`font-bold ${good ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"}`}>
-                  {good ? "✓" : "✕"}
-                </span>
+            <li key={i} className="flex items-start gap-3 text-slate-700 dark:text-slate-300">
+              <span className={`mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-xs font-bold ${good ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-400" : "bg-rose-100 text-rose-700 dark:bg-rose-900/50 dark:text-rose-400"}`}>
+                {good ? "✓" : "✕"}
               </span>
-              <span >{it}</span>
+              <span className="leading-relaxed">{it}</span>
             </li>
         ))}
       </ul>
   );
 }
 
-function Example({ bad, good, t }: { bad: string; good: string, t: any }) {
+function Example({ bad, good, t }) {
   return (
       <div className="grid md:grid-cols-2 gap-4">
-        <div className="rounded-2xl border border-rose-200 dark:border-rose-900/40 p-4 bg-rose-50/60 dark:bg-rose-950/20">
-          <div className="text-xs uppercase tracking-wide text-rose-700 dark:text-rose-300">{t.bad}</div>
-          <p className="mt-2 text-rose-900 dark:text-rose-200 font-medium">{bad}</p>
+        <div className="rounded-2xl border border-rose-200/60 dark:border-rose-900/40 p-5 bg-rose-50/80 dark:bg-rose-950/20 backdrop-blur-sm">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400 mb-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-rose-500"></span>
+            {t.bad}
+          </div>
+          <p className="text-rose-950 dark:text-rose-100 font-medium leading-relaxed">{bad}</p>
         </div>
-        <div className="rounded-2xl border border-emerald-200 dark:border-emerald-900/40 p-4 bg-emerald-50/60 dark:bg-emerald-950/20">
-          <div className="text-xs uppercase tracking-wide text-emerald-700 dark:text-emerald-300">{t.good}</div>
-          <p className="mt-2 text-emerald-900 dark:text-emerald-200 font-medium">{good}</p>
+        <div className="rounded-2xl border border-emerald-200/60 dark:border-emerald-900/40 p-5 bg-emerald-50/80 dark:bg-emerald-950/20 backdrop-blur-sm">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+            {t.good}
+          </div>
+          <p className="text-emerald-950 dark:text-emerald-100 font-medium leading-relaxed">{good}</p>
         </div>
       </div>
   );
@@ -242,10 +256,10 @@ function Example({ bad, good, t }: { bad: string; good: string, t: any }) {
 
 function Badge({ text }) {
   return (
-      <span className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-sm select-none">
-      <span className="h-2 w-2 rounded-full bg-slate-400" aria-hidden></span>
+      <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-800/80 px-4 py-1.5 text-sm font-medium text-slate-700 dark:text-slate-300 shadow-sm backdrop-blur-sm select-none transition-colors hover:bg-white dark:hover:bg-slate-700">
+        <span className="h-2 w-2 rounded-full bg-orange-400 dark:bg-orange-500" aria-hidden></span>
         {text}
-    </span>
+      </span>
   );
 }
 
@@ -262,7 +276,7 @@ function ThemeToggle() {
   return (
       <button
           onClick={() => setDark(d => !d)}
-          className="px-3 py-1 rounded-2xl border border-slate-400 focus:outline-none cursor-pointer"
+          className="p-2 rounded-xl border border-slate-300 bg-white/60 dark:border-slate-700 dark:bg-slate-800/60 hover:bg-white dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-orange-500/50 backdrop-blur-sm transition-all cursor-pointer shadow-sm text-lg"
           aria-pressed={dark}
           aria-label="Change the white/dark theme of the website"
       >
